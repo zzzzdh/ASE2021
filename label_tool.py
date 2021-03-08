@@ -293,6 +293,9 @@ class right_box(BoxLayout):
       for line in lines:
         if sum([int(x) for x in line.split()[1:]]) > 0:
           image_list.append(line.split()[0])
+    image0 = cv2.imread(os.path.join(data_dir, 'Images', video_name, '00001.png'))
+    cv2.imwrite(os.path.join(data_dir, 'Visualize', video_name, '00001.png'), image0)
+    image_list.insert(0, '00001')
     return image_list
 
   def keyboard_closed(self):
